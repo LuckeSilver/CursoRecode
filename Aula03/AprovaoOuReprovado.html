@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aprovação do Aluno</title>
+    <style>
+        h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(6, 6, 129);
+            
+        }
+        input#btnClick {
+            border:1px solid rgb(34, 6, 158);
+            border-radius:4px;
+            display:inline-block;
+            cursor:pointer;
+            font-family:Verdana;
+            font-weight:bold;
+            font-size:13px;
+            padding:2px 10px;
+            text-decoration:none;
+            border-color:#46a7f5;
+            background:linear-gradient(to bottom, #86c6f8 5%, #46a7f5 100%);
+            box-shadow:inset 0px 1px 0px 0px #d7ecfd;
+            color:#fff;
+            text-shadow:0px 1px 0px #1f088a;  
+            box-shadow: black 2px 2px 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Digite abaixo sua nota em cada bimestre</h2>
+    <input type="number" id="txtNota1" placeholder="Nota 1º Bimestre">
+    <input type="number" id="txtNota2" placeholder="Nota 2º Bimestre">
+    <input type="number" id="txtNota3" placeholder="Nota 3º Bimestre">
+    <input type="button" value="Enviar" id="btnClick" onclick="notaAluno()">
+    <div id="res">
+
+    </div>
+    <script>
+        function notaAluno() {
+            let tn1 = document.getElementById('txtNota1')
+            let tn2 = document.getElementById('txtNota2')
+            let tn3 = document.getElementById('txtNota3')
+            let res = document.getElementById('res')
+            let nota1 = Number(tn1.value)
+            let nota2 = Number(tn2.value)
+            let nota3 = Number(tn3.value)
+            let media = (nota1 + nota2 + nota3)/3
+
+
+            if(media >= 7 ) {
+                res.innerHTML = `<p>Parabéns sua média esse bimestre foi ${media.toFixed(2)}, você está <b>APROVADO!</p>`
+            }else if (media >= 5) {
+                res.innerHTML = `<p>Sua média esse bimestre foi <b>${media.toFixed(2)}</b> você está de <b>recuperação</p>`
+            } else {
+                res.innerHTML = `<p>Sua média esse bimestre foi <b>${media.toFixed(2)}</b> você esté <b>reprovado</p>`
+            }
+        }
+    </script>
+</body>
+</html>
