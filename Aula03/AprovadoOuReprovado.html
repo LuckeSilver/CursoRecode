@@ -49,14 +49,26 @@
             let nota2 = Number(tn2.value)
             let nota3 = Number(tn3.value)
             let media = (nota1 + nota2 + nota3)/3
+            
 
 
-            if(media >= 7 ) {
-                res.innerHTML = `<p>Parabéns sua média esse bimestre foi ${media.toFixed(2)}, você está <b>APROVADO!</p>`
+            /*if(media >= 7 ) {
+                res.innerHTML = `<p>Parabéns sua média esse bimestre foi <b>${media.toFixed(2)}</b> você está <b>APROVADO!</p>`
             }else if (media >= 5) {
                 res.innerHTML = `<p>Sua média esse bimestre foi <b>${media.toFixed(2)}</b> você está de <b>recuperação</p>`
             } else {
                 res.innerHTML = `<p>Sua média esse bimestre foi <b>${media.toFixed(2)}</b> você esté <b>reprovado</p>`
+            }*/
+
+            switch(true) {
+                case media >= 7:
+                    res.innerHTML = `<p>Parabéns sua média esse bimestre foi <b>${media.toFixed(2)}</b> você está <b>APROVADO!</p>`;
+                    break;
+                case media >= 5:
+                    res.innerHTML = `<p>Sua média esse bimestre foi <b>${media.toFixed(2)}</b> você está de <b>recuperação</p>`;
+                    break;
+                default:
+                    res.innerHTML = `<p>Sua média esse bimestre foi <b>${media.toFixed(2)}</b> você esté <b>reprovado</p>`;
             }
         }
     </script>
