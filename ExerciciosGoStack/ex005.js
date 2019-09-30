@@ -1,4 +1,5 @@
-var usuarios = [{
+let i =0;
+let usuarios = [{
     nome: "Lucas",
     habilidades: ["Javascript", "React", "ReactNative"]
 },
@@ -9,5 +10,10 @@ var usuarios = [{
 ];
 
 function skills() {
-    
+    for (i of usuarios) {
+        console.log(`O ${i.nome} possui as seguinte habilidades : ${i.habilidades}.`);
+        i++;
+    }
 }
+
+skills();
